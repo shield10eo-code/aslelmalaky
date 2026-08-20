@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منحل العسل الملكي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h2>منحل العسل الملكي</h2>
+        <div class="nav-links">
+            <a href="#hero">الرئيسية</a>
+            <a href="#cards">منتجاتنا</a>
+            <a href="#order-form">اطلب الآن</a>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="badge">عسل طبيعي 100%</span>
+                <h1>منحل العسل الملكي</h1>
+                <p>أجود أنواع العسل من المنحل مباشرة لبيتك</p>
+                <div class="hero-buttons">
+                    <button onclick="document.getElementById('order-form').scrollIntoView({behavior:'smooth'})">تسوق الآن</button>
+                    <a href="#cards">شوف المنتجات</a>
+                </div>
+            </div>
+            <img src="honey0.jpg" alt="عسل طبيعي">
+        </div>
+    </section>
+
+    <section id="cards" class="cards-section">
+        <h2>منتجاتنا المميزة</h2>
+        <div class="cards-container">
+            <div class="card">
+                <img src="honey2.jpg" alt="عسل البرسيم">
+                <h3>عسل البرسيم</h3>
+                <p class="highlight">خفيف ومثالي للتحلية اليومية طعم رائع للأطفال</p>
+                <p class="price">السعر 70 جنيه</p>
+                <button onclick="quickAdd('عسل البرسيم')">أضف للسلة</button>
+            </div>
+            <div class="card">
+                <img src="honey5.jpg" alt="عسل بالمكسرات">
+                <h3>عسل المكسرات</h3>
+                <p>مزيج غني بالفيتامينات والمعادن ومفيد للقلب</p>
+                <p class="price">السعر 100 جنيه</p>
+                <button onclick="quickAdd('عسل المكسرات')">أضف للسلة</button>
+            </div>
+            <div class="card">
+                <img src="honey3.jpg" alt="عسل الموالح">
+                <h3>عسل الموالح</h3>
+                <p>نكهة مميزة ومفيد جداً للمناعة في الشتاء</p>
+                <p class="price">السعر 80 جنيه</p>
+                <button onclick="quickAdd('عسل الموالح')">أضف للسلة</button>
+            </div>
+            <div class="card">
+                <img src="honey6.jpg" alt="شمع عسل">
+                <h3>شمع العسل</h3>
+                <p>علاج وترطيب البشرة مفيد لتخفيف الحساسية</p>
+                <p class="price">السعر 85 جنيه</p>
+                <button onclick="quickAdd('شمع العسل')">أضف للسلة</button>
+            </div>
+            <div class="card">
+                <img src="honey4.jpg" alt="عسل حبة البركة">
+                <h3>عسل حبة البركة</h3>
+                <p>علاجي ومقوي للمناعة الأفضل لنزلات البرد</p>
+                <p class="price">السعر 70 جنيه</p>
+                <button onclick="quickAdd('عسل حبة البركة')">أضف للسلة</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="order-form" class="order-form">
+        <div class="order-form-box">
+            <h3>اطلب منتجاتك الآن</h3>
+            <form onsubmit="return false;">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">الاسم</label>
+                        <input type="text" id="name" name="name" placeholder="اكتب اسمك" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الموبايل</label>
+                        <input type="tel" id="phone" name="phone" placeholder="01xxxxxxxxx" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="product">اختر المنتج</label>
+                    <select id="product" name="product" required>
+                        <option value="">-- اختر المنتج --</option>
+                        <option value="عسل البرسيم">عسل البرسيم - 70 جنيه</option>
+                        <option value="عسل الموالح">عسل الموالح - 80 جنيه</option>
+                        <option value="عسل حبة البركة">عسل حبة البركة - 70 جنيه</option>
+                        <option value="عسل المكسرات">عسل المكسرات - 100 جنيه</option>
+                        <option value="شمع العسل">شمع العسل - 85 جنيه</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="qty">الكمية</label>
+                    <input type="number" id="qty" name="qty" min="1" value="1" required>
+                </div>
+
+                <button type="button" onclick="addCart()">أضف للسلة</button>
+                <h3>السلة</h3>
+                <div id="cart-list">السلة فاضية</div>
+                <p id="cart-total">الاجمالي: 0 جنيه</p>
+
+                <button type="button" onclick="setWhatsAppMessage()">تأكيد الطلب</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="banner">
+        <img src="honey0.jpg" alt="عسل طبيعي">
+        <div class="banner-text">
+            <h2>عسل طبيعي 100% من المنحل لبيتك</h2>
+            <p>أجود أنواع العسل</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>للتواصل واتساب: <b>01554872976</b></p>
+        <p>© 2026 ABDEESNs COMP جميع الحقوق محفوظة </p>
+    </footer>
+
+    <script>
+        let cart = [];
+        const prices = {
+            "عسل البرسيم": 70,
+            "عسل الموالح": 80,
+            "عسل حبة البركة": 70,
+            "عسل المكسرات": 100,
+            "شمع العسل": 85,
+        };
+
+        function addCart(){
+            let product = document.getElementById('product').value;
+            let qty = parseInt(document.getElementById('qty').value);
+            if(product === ""){
+                alert("من فضلك اختر المنتج");
+                return;
+            }
+            let found = cart.find(item => item.name === product);
+            if(found) {
+                found.qty += qty;
+            } else {
+                cart.push({name: product, qty: qty, price: prices[product]});
+            }
+            showCart();
+        }
+
+        function quickAdd(productName){
+            let found = cart.find(item => item.name === productName);
+            if(found) {
+                found.qty += 1;
+            } else {
+                cart.push({name: productName, qty: 1, price: prices[productName]});
+            }
+            showCart();
+            document.getElementById('order-form').scrollIntoView({behavior:'smooth'});
+        }
+
+        function showCart() {
+            let cartList = document.getElementById('cart-list');
+            let total = 0;
+            cartList.innerHTML = "";
+
+            if(cart.length === 0){
+                cartList.innerHTML = "السلة فاضية";
+                document.getElementById('cart-total').innerText = "الاجمالي: 0 جنيه";
+                return;
+            }
+
+            cart.forEach(item => {
+                total += item.price * item.qty;
+                cartList.innerHTML += `<p>${item.name} - ${item.qty} قطع = ${item.price * item.qty} جنيه</p>`;
+            });
+
+            document.getElementById('cart-total').innerText = `الاجمالي: ${total} جنيه`;
+        }
+
+        function setWhatsAppMessage() {
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+
+            if(!name ||!phone){
+                alert("من فضلك املأ الاسم ورقم الموبايل");
+                return;
+            }
+            if(cart.length === 0){
+                alert("السلة فاضية، ضيف منتجات الأول");
+                return;
+            }
+
+            let message = `طلب جديد من منحل الملكي\n\n`;
+            cart.forEach(item => {
+                message += `${item.name} - ${item.qty} قطع = ${item.price * item.qty} جنيه\n`;
+            });
+            let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+            message += `\nالاجمالي: ${total} جنيه\n`;
+            message += `الاسم: ${name}\n`;
+            message += `رقم الموبايل: ${phone}`;
+
+            let url = `https://wa.me/201062507747?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
