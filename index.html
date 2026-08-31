@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منحل العسل الملكي</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -38,35 +39,35 @@
                 <img src="honey2.jpg" alt="عسل البرسيم">
                 <h3>عسل البرسيم</h3>
                 <p class="highlight">خفيف ومثالي للتحلية اليومية طعم رائع للأطفال</p>
-                <p class="price"> السعر 160 جنيه ك</p>
+                <p class="price">السعر 160 جنيه / ك</p>
                 <button onclick="quickAdd('عسل البرسيم')">أضف للسلة</button>
             </div>
             <div class="card">
                 <img src="honey5.jpg" alt="عسل بالمكسرات">
                 <h3>عسل المكسرات</h3>
                 <p>مزيج غني بالفيتامينات والمعادن ومفيد للقلب</p>
-                <p class="price">السعر 200 جنيه 500جم</p>
+                <p class="price">السعر 200 جنيه / 500جم</p>
                 <button onclick="quickAdd('عسل المكسرات')">أضف للسلة</button>
             </div>
             <div class="card">
                 <img src="honey3.jpg" alt="عسل الموالح">
                 <h3>عسل الموالح</h3>
                 <p>نكهة مميزة ومفيد جداً للمناعة في الشتاء</p>
-                <p class="price">السعر 200 جنيه ك</p>
+                <p class="price">السعر 200 جنيه / ك</p>
                 <button onclick="quickAdd('عسل الموالح')">أضف للسلة</button>
             </div>
             <div class="card">
                 <img src="honey6.jpg" alt="شمع عسل">
                 <h3>شمع العسل</h3>
                 <p>علاج وترطيب البشرة مفيد لتخفيف الحساسية</p>
-                <p class="price">السعر 100 جنيه 500جم</p>
+                <p class="price">السعر 100 جنيه / 500جم</p>
                 <button onclick="quickAdd('شمع العسل')">أضف للسلة</button>
             </div>
             <div class="card">
                 <img src="honey4.jpg" alt="عسل حبة البركة">
                 <h3>عسل حبة البركة</h3>
                 <p>علاجي ومقوي للمناعة الأفضل لنزلات البرد</p>
-                <p class="price">السعر 160 جنيه ك</p>
+                <p class="price">السعر 160 جنيه / ك</p>
                 <button onclick="quickAdd('عسل حبة البركة')">أضف للسلة</button>
             </div>
         </div>
@@ -90,11 +91,11 @@
                     <label for="product">اختر المنتج</label>
                     <select id="product" name="product" required>
                         <option value="">-- اختر المنتج --</option>
-                        <option value="عسل البرسيم">عسل البرسيم - 70 جنيه</option>
-                        <option value="عسل الموالح">عسل الموالح - 80 جنيه</option>
-                        <option value="عسل حبة البركة">عسل حبة البركة - 70 جنيه</option>
-                        <option value="عسل المكسرات">عسل المكسرات - 100 جنيه</option>
-                        <option value="شمع العسل">شمع العسل - 85 جنيه</option>
+                        <option value="عسل البرسيم">عسل البرسيم - 160 جنيه</option>
+                        <option value="عسل الموالح">عسل الموالح - 200 جنيه</option>
+                        <option value="عسل حبة البركة">عسل حبة البركة - 160 جنيه</option>
+                        <option value="عسل المكسرات">عسل المكسرات - 200 جنيه</option>
+                        <option value="شمع العسل">شمع العسل - 100 جنيه</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -102,12 +103,12 @@
                     <input type="number" id="qty" name="qty" min="1" value="1" required>
                 </div>
 
-                <button type="button" onclick="addCart()">أضف للسلة</button>
+                <button type="button" class="btn-add">أضف للسلة</button>
                 <h3>السلة</h3>
                 <div id="cart-list">السلة فاضية</div>
                 <p id="cart-total">الاجمالي: 0 جنيه</p>
 
-                <button type="button" onclick="setWhatsAppMessage()">تأكيد الطلب</button>
+                <button type="button" class="btn-whatsapp" onclick="setWhatsAppMessage()">تأكيد الطلب عبر واتساب</button>
             </form>
         </div>
     </section>
@@ -128,12 +129,14 @@
     <script>
         let cart = [];
         const prices = {
-            "عسل البرسيم": 70,
-            "عسل الموالح": 80,
-            "عسل حبة البركة": 70,
-            "عسل المكسرات": 100,
-            "شمع العسل": 85,
+            "عسل البرسيم": 160,
+            "عسل الموالح": 200,
+            "عسل حبة البركة": 160,
+            "عسل المكسرات": 200,
+            "شمع العسل": 100,
         };
+
+        document.querySelector('.btn-add').addEventListener('click', addCart);
 
         function addCart(){
             let product = document.getElementById('product').value;
@@ -194,7 +197,7 @@
                 return;
             }
 
-            let message = `طلب جديد من منحل الملكي\n\n`;
+            let message = `طلب جديد من منحل الملكي\n`;
             cart.forEach(item => {
                 message += `${item.name} - ${item.qty} قطع = ${item.price * item.qty} جنيه\n`;
             });
