@@ -1,37 +1,4 @@
-@media  (max-width: 768px)  {
-    .navbar{
-        padding: 10px;
-    }
-    .navbar a{
-        display: block;
-        margin: 8px 0;
-        font-size: 18px;
-    }
-    .hero{
-        height: 300px;
-        padding: 20px;
-    }
-    .hero h1{
-        font-size: 28px;
-    }
-    .hero p{
-        font-size: 16px;
-    }
-    .grid{
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    .card img{
-        height: 220px;
-    }
-    .admin-btn{
-        bottom: 10px;
-        left: 10px;
-        font-size: 14px;
-        padding: 10px 15px;
-    }
-}
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -40,28 +7,25 @@ body {
     font-family: 'Cairo', sans-serif;
     direction: rtl;
     background-color: #ece6c0;
-    color: rgb(70, 49, 18); 
+    color: rgb(70, 49, 18);
     scroll-behavior: smooth;
 }
+
+/* النافبار */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 80px;
     background: #8B5E3C;
-    color: rgb(221, 215, 215);
+    color: white;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-.navbar h2 {
-    font-size: 28px;
-}
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
+.navbar h2 { font-size: 28px; }
+.nav-links { display: flex; gap: 30px; }
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -69,13 +33,10 @@ body {
     font-weight: 600;
     transition: 0.3s;
 }
-.nav-links a:hover {
-    color: #700;
-}
-.hero-section {
-    background: #FFF8F0;
-    padding: 80px 40px;
-}
+.nav-links a:hover { color: #FFC107; }
+
+/* الهيرو */
+.hero-section { background: #FFF8F0; padding: 80px 40px; }
 .hero-content {
     display: flex;
     align-items: center;
@@ -85,57 +46,52 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
+.hero-text.badge {
+    background: #FFC107;
+    color: #2c1a0e;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
 .hero-text h1 {
     font-size: 60px;
     color: #312819;
     line-height: 1.3;
     font-weight: 800;
+    margin: 15px 0;
 }
-.hero-text p {
-    font-size: 18px;
-    color: #555555;
-    margin-bottom: 30px;
-}
-.hero-content img{
-    width: 100%;
-    border-radius: 15px;
-    object-fit: cover;
-}
-.hero-button {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    margin-top: 30px;
-}
+.hero-text p { font-size: 18px; color: #555; margin-bottom: 30px; }
+.hero-content img { width: 50%; border-radius: 15px; object-fit: cover; }
+.hero-buttons { display: flex; gap: 20px; align-items: center; }
 .hero-buttons button {
-    background: rgb(77, 63, 34);
-    color: #fff2f2;
-    padding: 12px 25px;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
+    color: #2c1a0e;
+    padding: 14px 30px;
+    border-radius: 12px;
     font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
     border: none;
+    box-shadow: 0 4px 12px rgba(255, 143, 0, 0.3);
+    transition: 0.3s;
 }
-.hero-button a {
-    color: #000000;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: underline;
+.hero-buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 143, 0, 0.5);
 }
-.cards-section {
-    padding: 60px 20px;
-    background: rgb(238, 228, 196);
-    margin-bottom: 50px;
-}
+.hero-buttons a { color: #000; font-size: 18px; font-weight: 600; }
+
+/* الكروت */
+.cards-section { padding: 60px 20px; background: rgb(238, 228, 196); }
 .cards-section h2 {
     font-size: 40px;
     color: #8B5E3C;
     margin-bottom: 50px;
+    text-align: center;
 }
 .cards-container {
     display: flex;
     justify-content: center;
-    align-items: stretch;
     gap: 30px;
     flex-wrap: wrap;
     max-width: 1200px;
@@ -143,124 +99,125 @@ body {
 }
 .card {
     background: rgb(255, 252, 250);
-    width: 350px;
+    width: 300px;
     border-radius: 15px;
     padding: 25px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 .card img {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
 }
-.card h3 {
-    color: #8B5E3C;
-    font-size: 26px;
-    margin: 15px 0 10px 0;
-}
-.card p {
-    color: #555;
-    line-height: 1.8;
-    flex-grow: 1;
-}
-.card .price {
+.card h3 { color: #8B5E3C; font-size: 24px; margin: 10px 0; }
+.card p { color: #555; line-height: 1.8; flex-grow: 1; }
+.card.price {
     font-size: 22px;
-    font-weight: 900px;
+    font-weight: 900;
     color: #D4A017;
     margin: 15px 0;
 }
 .card button {
     background: #8B5E3C;
-    color:white;
+    color: white;
     border: none;
     padding: 12px;
     border-radius: 10px;
     font-size: 18px;
-    font-weight: 700px;
-    cursor: pointer;
-    margin-top: auto;
-}
-.card button:hover {
-    background: #6b462c;
-}
-.order-section {
-    padding: 100px 20px;
-    display: flex;
-}
-.order-form-box {
-    background: rgba(255,255,255,0.95);
-    padding: 40px 50px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-}
-.order-form-box h3 {
-    color: #f8f3f3;
-    font-size: 35px;
-    margin-bottom: 30pxs;
-}
-.form-row {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 25px;
-}
-.form-group {
-    flex: 1;
-    text-align: right;  
-}
-.form-group lebel{
-   display: block;
-   margin-bottom: 600;
-   font-size: 18px;
-}
-.form-group input {                                                                                   
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #000000;
-    border-radius: 8px;
-    font-size: 16px;
-}
-.order-form-box{
-    background: #5c4224;
-    color: white;
-    padding: 15px40px;
-    border: none;
-    border-radius: 15px;
-    font-size: 20px;
     font-weight: 700;
     cursor: pointer;
-    margin-top: 5px;
-    margin-bottom: 220px;
+    transition: 0.3s;
 }
-button[type="submit"]{
-    direction: rtl;
-    padding:16px  30px;
-    min-width: 200px;
+.card button:hover { background: #6b462c; }
+
+/* الفورم */
+.order-form { padding: 80px 20px; display: flex; justify-content: center; }
+.order-form-box {
+    background: #5c4224;
+    color: white;
+    padding: 40px 50px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+.order-form-box h3 { font-size: 32px; margin-bottom: 30px; text-align: center; }
+.form-row { display: flex; gap: 20px; margin-bottom: 25px; }
+.form-group { flex: 1; text-align: right; }
+.form-group label { display: block; margin-bottom: 8px; font-size: 18px; }
+.form-group input,.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     font-size: 16px;
-    border-radius: 9px;
+    font-family: 'Cairo';
+}
+.btn-add {
+    background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
+    color: #2c1a0e;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
-    white-space: nowrap;
+    margin: 15px 0;
 }
-.banner{
-    position: relative;
-    margin-top: 40px;border-radius: 12px;
-    overflow: hidden;
+.btn-whatsapp {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
 }
-.banner-text{
+
+/* البانر والفوتر */
+.banner { position: relative; margin-top: 40px; }
+.banner img { width: 100%; display: block; }
+.banner-text {
     position: absolute;
     top: 40px;
-    left: 40px;
-    color: #d3ccbc;
+    right: 40px;
+    color: #fff;
     max-width: 400px;
+    background: rgba(0,0,0,0.4);
+    padding: 20px;
+    border-radius: 10px;
 }
-footer{
-    color: rgb(61, 2, 2);
-    padding: 19px;
-    
+footer {
+    background: #8B5E3C;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ==================== للموبايل ==================== */
+@media (max-width: 768px) {
+   .navbar { padding: 15px 20px; flex-direction: column; gap: 10px; }
+   .navbar h2 { font-size: 22px; }
+   .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+
+   .hero-content { flex-direction: column; }
+   .hero-content img { width: 100%; }
+   .hero-text h1 { font-size: 36px; text-align: center; }
+   .hero-text p { text-align: center; }
+   .hero-buttons { justify-content: center; }
+
+   .cards-container { flex-direction: column; align-items: center; }
+   .card { width: 90%; }
+
+   .form-row { flex-direction: column; }
+   .banner-text { position: static; background: #FFF8F0; color: #2c1a0e; text-align: center; }
 }
