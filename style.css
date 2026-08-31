@@ -11,7 +11,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/* النافبار */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -35,7 +34,6 @@ body {
 }
 .nav-links a:hover { color: #FFC107; }
 
-/* الهيرو */
 .hero-section { background: #FFF8F0; padding: 80px 40px; }
 .hero-content {
     display: flex;
@@ -81,7 +79,7 @@ body {
 }
 .hero-buttons a { color: #000; font-size: 18px; font-weight: 600; }
 
-/* الكروت */
+
 .cards-section { padding: 60px 20px; background: rgb(238, 228, 196); }
 .cards-section h2 {
     font-size: 40px;
@@ -135,7 +133,6 @@ body {
 }
 .card button:hover { background: #6b462c; }
 
-/* الفورم */
 .order-form { padding: 80px 20px; display: flex; justify-content: center; }
 .order-form-box {
     background: #5c4224;
@@ -181,8 +178,6 @@ body {
     cursor: pointer;
     margin-top: 10px;
 }
-
-/* البانر والفوتر */
 .banner { position: relative; margin-top: 40px; }
 .banner img { width: 100%; display: block; }
 .banner-text {
@@ -203,7 +198,6 @@ footer {
     margin-top: 40px;
 }
 
-/* ==================== للموبايل ==================== */
 @media (max-width: 768px) {
    .navbar { padding: 15px 20px; flex-direction: column; gap: 10px; }
    .navbar h2 { font-size: 22px; }
@@ -221,4 +215,3 @@ footer {
    .form-row { flex-direction: column; }
    .banner-text { position: static; background: #FFF8F0; color: #2c1a0e; text-align: center; }
 }
-body { border: 5px solid red; }
