@@ -7,17 +7,16 @@ body {
     font-family: 'Cairo', sans-serif;
     direction: rtl;
     background-color: #ece6c0;
-    color: rgb(70, 49, 18);
+    color: rgb(70, 49, 18); 
     scroll-behavior: smooth;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 80px;
     background: #8B5E3C;
-    color: white;
+    color: rgb(221, 215, 215);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -32,9 +31,12 @@ body {
     font-weight: 600;
     transition: 0.3s;
 }
-.nav-links a:hover { color: #FFC107; }
+.nav-links a:hover { color: #D2B48C; }
 
-.hero-section { background: #FFF8F0; padding: 80px 40px; }
+.hero-section {
+    background: #FFF8F0;
+    padding: 80px 40px;
+}
 .hero-content {
     display: flex;
     align-items: center;
@@ -44,9 +46,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-.hero-text.badge {
-    background: #FFC107;
-    color: #2c1a0e;
+.hero-text .badge {
+    background: #D2B48C;
+    color: #3e2f1c;
     padding: 5px 15px;
     border-radius: 20px;
     font-weight: bold;
@@ -58,29 +60,63 @@ body {
     font-weight: 800;
     margin: 15px 0;
 }
-.hero-text p { font-size: 18px; color: #555; margin-bottom: 30px; }
-.hero-content img { width: 50%; border-radius: 15px; object-fit: cover; }
-.hero-buttons { display: flex; gap: 20px; align-items: center; }
-.hero-buttons button {
-    background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
-    color: #2c1a0e;
-    padding: 14px 30px;
-    border-radius: 12px;
+.hero-text p {
     font-size: 18px;
-    font-weight: bold;
+    color: #555;
+    margin-bottom: 30px;
+}
+.hero-content img{
+    width: 50%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* === الزراير البني الفاتح الجديدة === */
+button {
+    background: #D2B48C; /* بني فاتح */
+    color: #3e2f1c; /* بني غامق للكلام */
+    border: 2px solid #8B5E3C; /* برواز بني */
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
     cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+button:hover {
+    background: #C19A6B; /* بني اغمق */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 94, 60, 0.3);
+}
+
+/* زرار الهيرو */
+.hero-buttons button {
+    background: #8B5E3C; /* بني غامق */
+    color: #FFF8F0; /* بيج */
     border: none;
-    box-shadow: 0 4px 12px rgba(255, 143, 0, 0.3);
-    transition: 0.3s;
+    width: auto;
 }
 .hero-buttons button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 143, 0, 0.5);
+    background: #6b462c;
 }
-.hero-buttons a { color: #000; font-size: 18px; font-weight: 600; }
+.hero-buttons a {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: underline;
+}
 
-
-.cards-section { padding: 60px 20px; background: rgb(238, 228, 196); }
+.cards-section {
+    padding: 60px 20px;
+    background: rgb(238, 228, 196);
+}
 .cards-section h2 {
     font-size: 40px;
     color: #8B5E3C;
@@ -112,26 +148,18 @@ body {
     border-radius: 10px;
     margin-bottom: 15px;
 }
-.card h3 { color: #8B5E3C; font-size: 24px; margin: 10px 0; }
+.card h3 {
+    color: #8B5E3C;
+    font-size: 24px;
+    margin: 10px 0;
+}
 .card p { color: #555; line-height: 1.8; flex-grow: 1; }
-.card.price {
+.card .price {
     font-size: 22px;
     font-weight: 900;
-    color: #D4A017;
+    color: #8B5E3C;
     margin: 15px 0;
 }
-.card button {
-    background: #8B5E3C;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.card button:hover { background: #6b462c; }
 
 .order-form { padding: 80px 20px; display: flex; justify-content: center; }
 .order-form-box {
@@ -154,30 +182,17 @@ body {
     font-size: 16px;
     font-family: 'Cairo';
 }
-.btn-add {
-    background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
-    color: #2c1a0e;
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 15px 0;
-}
+
+/* زرار الواتساب */
 .btn-whatsapp {
-    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-    color: white;
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
+    background: #25D366 !important;
+    color: white !important;
+    border: none !important;
 }
+.btn-whatsapp:hover {
+    background: #128C7E !important;
+}
+
 .banner { position: relative; margin-top: 40px; }
 .banner img { width: 100%; display: block; }
 .banner-text {
@@ -198,20 +213,18 @@ footer {
     margin-top: 40px;
 }
 
+/* للموبايل */
 @media (max-width: 768px) {
    .navbar { padding: 15px 20px; flex-direction: column; gap: 10px; }
    .navbar h2 { font-size: 22px; }
    .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
-
    .hero-content { flex-direction: column; }
    .hero-content img { width: 100%; }
    .hero-text h1 { font-size: 36px; text-align: center; }
    .hero-text p { text-align: center; }
    .hero-buttons { justify-content: center; }
-
    .cards-container { flex-direction: column; align-items: center; }
    .card { width: 90%; }
-
    .form-row { flex-direction: column; }
    .banner-text { position: static; background: #FFF8F0; color: #2c1a0e; text-align: center; }
 }
