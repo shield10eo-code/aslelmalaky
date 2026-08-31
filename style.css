@@ -221,3 +221,4 @@ footer {
    .form-row { flex-direction: column; }
    .banner-text { position: static; background: #FFF8F0; color: #2c1a0e; text-align: center; }
 }
+body { border: 5px solid red; }
